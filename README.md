@@ -46,6 +46,37 @@
 
 ---
 
+### 🧱 Backend Engineering Philosophy & Architecture Blueprint
+
+Rather than relying on third-party black-box tools, I build systems grounded in software engineering principles:
+
+| Pillar | Core Principles & Hands-on Implementation |
+| :--- | :--- |
+| 🏛️ **Layered Architecture** | Strict separation of concerns via 3-tier patterns: Controller (routing & payload validation) ➔ Service (business rules & transactions) ➔ Repository/DAO (persistence). |
+| 🛡️ **Defensive Engineering** | Fail-fast input validation, centralized error handling, custom exception hierarchies, and complete elimination of scanner/stream memory leaks. |
+| 💾 **ACID & Data Integrity** | Atomic transactions (`setAutoCommit(false)`, rollback on failure), relational schema design, foreign-key isolation, and duplicate-prevention constraints. |
+| ⚡ **Concurrency & Thread Safety** | Non-blocking request handling using fixed thread pools (`Executors.newFixedThreadPool`), immutable models, and synchronized access to shared buffers. |
+
+```
+┌─────────────────────────────────┐
+│  1. Domain & API Contract       │  Define entity models, request/response DTOs, and REST endpoints
+└───────────────┬─────────────────┘
+                ▼
+┌─────────────────────────────────┐
+│  2. Business Logic & Isolation  │  Implement service layer with strict validation & custom exceptions
+└───────────────┬─────────────────┘
+                ▼
+┌─────────────────────────────────┐
+│  3. Transactional Persistence   │  ACID transactions, schema design, and connection pooling
+└───────────────┬─────────────────┘
+                ▼
+┌─────────────────────────────────┐
+│  4. Defensive Error Handling    │  Centralized global exception handling & standardized JSON responses
+└─────────────────────────────────┘
+```
+
+---
+
 ### 📖 Learning Journey & Practice Repositories
 *These repositories document my day-to-day hands-on practice, code experiments, and learning milestones:*
 
@@ -57,18 +88,16 @@
 
 ---
 
-### 📊 GitHub Activity & Metrics
+### 🎯 Active Milestone Tracker
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=alok0770&show_icons=true&theme=default&border_color=d0d7de&bg_color=ffffff&title_color=0969da&text_color=24292f&icon_color=0969da" height="160" alt="Alok's GitHub Stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=alok0770&theme=default&border=d0d7de&background=ffffff&stroke=0969da&ring=0969da&fire=0969da&currStreakLabel=0969da" height="160" alt="Streak Stats" />
-</div>
-
-<br>
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=alok0770&layout=compact&theme=default&border_color=d0d7de&bg_color=ffffff&title_color=0969da&text_color=24292f" height="140" alt="Top Languages" />
-</div>
+- ✅ **Core Java Foundations**: OOP Architecture, Collections Framework, Multithreading, Generics, File I/O
+- ✅ **Java 8 Modern Features**: Lambda Expressions, Stream API, Optional, Functional Interfaces, Method References
+- ✅ **Build & Tooling**: Maven Dependency Management, Build Lifecycle, Git/GitHub Version Control
+- ✅ **Native Networking**: Embedded HTTP Server (`com.sun.net.httpserver`), REST API Handlers, JSON Serialization
+- ✅ **Database Persistence**: Relational Schema Design, SQLite JDBC, ACID Transactions
+- 🔄 **Spring Core (In-Depth)**: IoC Container, Dependency Injection, Bean Lifecycle, Configuration — *Currently Active*
+- 🔄 **Spring Boot & Web**: REST Controllers, Request Validation, Service Layer Architecture — *In Progress*
+- ⏳ **Next Up**: Spring MVC, Spring Security & JWT, Hibernate/JPA, Redis Caching, Apache Kafka
 
 ---
 
